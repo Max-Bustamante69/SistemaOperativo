@@ -1,15 +1,8 @@
-# 👥 Colaboradores del Proyecto
+# Contribucion de Miembros
 
-Este archivo tiene como objetivo reconocer a todas las personas que han contribuido al desarrollo de **EAFITos**.
+| Nombre                  | Codigo | Rol          | Tareas Asignadas                                                  | % Contribucion |
+|-------------------------|--------|--------------|-------------------------------------------------------------------|----------------|
+| Maximiliano Bustamante  |        | Desarrollador | Comando `crear`, documentacion, estructura del proyecto, .gitignore | 50%            |
+| Valeria                 |        | Desarrollador | Comando `limpiar`, pruebas, integracion                            | 50%            |
 
-## Mantenedores Principales
-* **Desarrollador Principal**: [Tu Nombre / Usuario] - Arquitectura del núcleo y shell básica.
-
-## Colaboradores
-* *Aún no hay colaboradores externos.*
-
-## Cómo contribuir
-Si deseas aparecer en esta lista:
-1. Haz un fork del repositorio.
-2. Implementa una nueva funcionalidad (ej. gestión de procesos).
-3. Envía un Pull Request.
+Total: 100%

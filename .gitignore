@@ -1,0 +1,27 @@
+# ==============================================================================
+# .gitignore para EAFITos (Proyecto C)
+# ==============================================================================
+
+# --- Directorios y archivos de build ---
+build/
+*.o
+*.out
+*.exe
+*.log
+*.dSYM/
+
+# --- Archivos generados por Doxygen ---
+docs/html/
+docs/latex/
+
+# --- Archivos temporales del sistema operativo ---
+.DS_Store
+Thumbs.db
+
+# --- Archivos y carpetas de editores/IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+

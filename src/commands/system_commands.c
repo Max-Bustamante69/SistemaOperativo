@@ -2,8 +2,8 @@
  * @file system_commands.c
  * @brief Comandos de utilería del sistema.
  * 
- * Actualmente contiene la calculadora, pero podría expandirse para incluir
- * gestión de procesos o informes de memoria.
+ * Contiene comandos que afectan al sistema o la sesión completa de la shell,
+ * como la calculadora y la limpieza de pantalla.
  */
 
 #include <stdio.h>
@@ -63,4 +63,27 @@ void cmd_calc(char **args) {
     // 4. Salida
     // %.2f formatea el float para mostrar solo 2 decimales.
     printf("Resultado: %.2f\n", res);
+}
+
+/**
+ * @brief Comando LIMPIAR (clear)
+ *
+ * Limpia la pantalla de la terminal utilizando secuencias de escape ANSI
+ * y posiciona el cursor en la esquina superior izquierda.
+ *
+ * A diferencia de usar system(\"clear\"), que está penalizado en el reto,
+ * este comando utiliza únicamente funcionalidades de la librería estándar
+ * y códigos ANSI, lo que lo hace más portable y seguro.
+ *
+ * @param args Argumentos del comando (ignorados).
+ * @author Valeria
+ */
+void cmd_limpiar(char **args) {
+    (void)args; // No se usan argumentos en este comando
+
+    // Secuencias ANSI:
+    //  - \033[2J : Limpia toda la pantalla
+    //  - \033[H  : Mueve el cursor a la posición (fila 1, columna 1)
+    printf("\033[2J\033[H");
+    fflush(stdout);
 }

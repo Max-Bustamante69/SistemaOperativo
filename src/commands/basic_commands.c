@@ -27,6 +27,7 @@ void cmd_ayuda(char **args) {
     printf("  - salir: Termina la sesion.\n");
     printf("\nComandos avanzados:\n");
     printf("  - crear <archivo>: Crea un archivo vacio.\n");
+    printf("  - limpiar: Limpia la pantalla de la terminal.\n");
     
     // Silenciar advertencia de compilador sobre variable no usada
     (void)args;

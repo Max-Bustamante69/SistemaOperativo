@@ -41,6 +41,20 @@ void cmd_ayuda(char **args);
  */
 void cmd_salir(char **args);
 
+// --- Prototipos de Comandos Avanzados (Archivos) ---
+
+/**
+ * @brief Crea un archivo vacío en el directorio actual.
+ * @author Maximiliano Bustamante
+ */
+void cmd_crear(char **args);
+
+/**
+ * @brief Limpia la pantalla de la terminal.
+ * @author Valeria
+ */
+void cmd_limpiar(char **args);
+
 // --- Utilidades del Registro de Comandos ---
 
 /**

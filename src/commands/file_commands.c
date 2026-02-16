@@ -79,3 +79,50 @@ void cmd_leer(char **args) {
     // fclose(): Es crítico cerrar los archivos para evitar fugas de recursos.
     fclose(fp);
 }
+
+/**
+ * @brief Comando CREAR (touch)
+ * 
+ * Crea un archivo vacío en el directorio actual. Si el archivo ya existe,
+ * se notifica al usuario sin sobrescribirlo, protegiendo datos existentes.
+ * 
+ * Funcionamiento interno:
+ * 1. Valida que el usuario haya proporcionado un nombre de archivo.
+ * 2. Intenta abrir el archivo en modo lectura ("r") para verificar si ya existe.
+ * 3. Si no existe, lo crea con fopen en modo escritura ("w").
+ * 4. Cierra el archivo inmediatamente para liberar el recurso.
+ * 
+ * @param args args[1] debe contener el nombre del archivo a crear.
+ * @author Maximiliano Bustamante
+ */
+void cmd_crear(char **args) {
+    // Validación: ¿El usuario proporcionó el nombre del archivo?
+    if (args[1] == NULL) {
+        printf("Error: Debes especificar un nombre de archivo.\n");
+        printf("Uso: crear <nombre_archivo>\n");
+        printf("Ejemplo: crear notas.txt\n");
+        return;
+    }
+
+    // Verificación de existencia: intentamos abrir en modo lectura.
+    // Si fopen("r") retorna un puntero válido, el archivo ya existe.
+    FILE *fp = fopen(args[1], "r");
+    if (fp != NULL) {
+        fclose(fp);
+        printf("Error: El archivo '%s' ya existe.\n", args[1]);
+        return;
+    }
+
+    // Creación: abrimos en modo escritura ("w"), lo que crea el archivo vacío.
+    // Si fopen("w") retorna NULL, hubo un error del sistema (permisos, disco lleno, etc.)
+    fp = fopen(args[1], "w");
+    if (fp == NULL) {
+        printf("Error: No se pudo crear el archivo '%s'.\n", args[1]);
+        printf("Verifique los permisos del directorio actual.\n");
+        return;
+    }
+
+    // Cerramos inmediatamente: el archivo queda creado y vacío en disco.
+    fclose(fp);
+    printf("Archivo '%s' creado exitosamente.\n", args[1]);
+}

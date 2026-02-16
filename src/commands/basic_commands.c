@@ -18,13 +18,15 @@
  */
 void cmd_ayuda(char **args) {
     printf("--- Ayuda de Shell Educativa ---\n");
-    printf("Comandos disponibles:\n");
+    printf("Comandos basicos:\n");
     printf("  - listar: Muestra archivos del directorio.\n");
     printf("  - leer <archivo>: Muestra el contenido de un archivo.\n");
     printf("  - tiempo: Muestra la fecha y hora actual.\n");
-    printf("  - calc <n1> <op> <n2>: Realiza cálculos simples.\n");
+    printf("  - calc <n1> <op> <n2>: Realiza calculos simples.\n");
     printf("  - ayuda: Muestra este mensaje.\n");
-    printf("  - salir: Termina la sesión.\n");
+    printf("  - salir: Termina la sesion.\n");
+    printf("\nComandos avanzados:\n");
+    printf("  - crear <archivo>: Crea un archivo vacio.\n");
     
     // Silenciar advertencia de compilador sobre variable no usada
     (void)args;
